@@ -31,6 +31,10 @@ Thermostat.prototype.isPowerSavingModeOn = function(){
   //returning a boolean
   return this.powerSavingMode === true;
 };
+
+Thermostat.prototype.switchPowerSavingModeOff = function(){
+  return this.powerSavingMode = false; 
+};
 };
 // things to notice:
 // 1. temperature property is in constructor function, between {}

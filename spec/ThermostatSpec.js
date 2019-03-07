@@ -35,4 +35,10 @@ it('has PSM on by default', function(){
   expect(thermostat.isPowerSavingModeOn()).toBe(true);
 });
 
+it('can turn PSM off', function(){
+//can turn off since it is on by default
+  thermostat.switchPowerSavingModeOff();
+  expect(thermostat.isPowerSavingModeOn()).toBe(false);
+});
+
 });
