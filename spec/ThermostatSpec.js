@@ -12,4 +12,10 @@ it('initializes with tempertaure of 20 degC', function(){
 expect(thermostat.getCurrentTemperature()).toEqual(20);
 });
 
+it('can increase its temperature', function(){
+thermostat.up()
+//assume thermostat increases temperature by 1degC at a time
+expect(thermostat.getCurrentTemperature()).toEqual(21);
+});
+
 });

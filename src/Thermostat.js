@@ -8,6 +8,10 @@ Thermostat.prototype.getCurrentTemperature = function(){
   return this.temperature;
 };
 
+Thermostat.prototype.up = function(){
+  this.temperature += 1;
+};
+
 };
 // things to notice:
 // 1. temperature property is in constructor function, between {}
