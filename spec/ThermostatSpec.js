@@ -31,4 +31,8 @@ for (var i = 0; i < 11; i ++) {
 expect(thermostat.getCurrentTemperature()).toEqual(10);
 });
 
+it('has PSM on by default', function(){
+  expect(thermostat.isPowerSavingModeOn()).toBe(true);
+});
+
 });

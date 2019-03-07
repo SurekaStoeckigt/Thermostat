@@ -4,7 +4,7 @@ function Thermostat(){
 //using all CAPS for proerty name (constant)
 this.MINIMUM_TEMPERATURE = 10;
 this.temperature = 20;
-
+this.powerSavingMode = true;
 
 Thermostat.prototype.getCurrentTemperature = function(){
   return this.temperature;
@@ -27,6 +27,10 @@ Thermostat.prototype.isMinimumTemperature = function(){
   return this.temperature === this.MINIMUM_TEMPERATURE;
 }
 
+Thermostat.prototype.isPowerSavingModeOn = function(){
+  //returning a boolean
+  return this.powerSavingMode === true;
+};
 };
 // things to notice:
 // 1. temperature property is in constructor function, between {}
