@@ -23,4 +23,12 @@ thermostat.down()
 expect(thermostat.getCurrentTemperature()).toEqual(19);
 });
 
+it('has a minimum of 10degC', function(){
+// need to call thermostat down 11 times, so use a loop
+for (var i = 0; i < 11; i ++) {
+  thermostat.down();
+}
+expect(thermostat.getCurrentTemperature()).toEqual(10);
+});
+
 });

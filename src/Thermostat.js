@@ -1,6 +1,8 @@
 'use strict';
 
 function Thermostat(){
+//using all CAPS for proerty name (constant)
+this.MINIMUM_TEMPERATURE = 10;
 this.temperature = 20;
 
 
@@ -13,8 +15,17 @@ Thermostat.prototype.up = function(){
 };
 
 Thermostat.prototype.down = function(){
+  //this is a guard condition to return this.temperature if temperatre === MINIMUM_TEMPERATURE, or descrease temp by 1degC
+  if (this.isMinimumTemperature()){
+    return this.temperature;
+  }
   this.temperature -=1;
 };
+
+Thermostat.prototype.isMinimumTemperature = function(){
+  //return true or false
+  return this.temperature === this.MINIMUM_TEMPERATURE;
+}
 
 };
 // things to notice:
