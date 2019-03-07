@@ -41,11 +41,26 @@ it('can turn PSM off', function(){
   expect(thermostat.isPowerSavingModeOn()).toBe(false);
 });
 
-it('', function(){
+it('can turn PSM back on', function(){
   thermostat.switchPowerSavingModeOff();
   expect(thermostat.isPowerSavingModeOn()).toBe(false);
   thermostat.switchPowerSavingModeOn();
   expect(thermostat.isPowerSavingModeOn()).toBe(true);
+});
+
+it('when PSM is on, has a maximum of 25degC', function(){
+  for (var i = 0; i < 6; i ++) {
+  thermostat.up();
+}
+expect(thermostat.getCurrentTemperature()).toEqual(25);
+});
+
+it('when PSM is off, has maximum of 32degC', function(){
+  thermostat.switchPowerSavingModeOff();
+  for (var i = 0; i < 13; i ++) {
+    thermostat.up();
+  }
+  expect(thermostat.getCurrentTemperature()).toEqual(32);
 });
 
 });
