@@ -18,4 +18,9 @@ thermostat.up()
 expect(thermostat.getCurrentTemperature()).toEqual(21);
 });
 
+it('can decrease its temperature', function(){
+thermostat.down()
+expect(thermostat.getCurrentTemperature()).toEqual(19);
+});
+
 });

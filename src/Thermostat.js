@@ -12,6 +12,10 @@ Thermostat.prototype.up = function(){
   this.temperature += 1;
 };
 
+Thermostat.prototype.down = function(){
+  this.temperature -=1;
+};
+
 };
 // things to notice:
 // 1. temperature property is in constructor function, between {}
