@@ -9,30 +9,30 @@ $(document).ready(function() {
   //$('element').click(function() {})
   updateTemperature();
 
-  $('#temp-up').click(function() {
+  $('#temperature-down').click(function() {
     thermostat.down();
     updateTemperature();
   });
 
-  $('#temp-down').click(function() {
+  $('#temperature-up').click(function() {
     thermostat.up();
     updateTemperature();
   });
 
-  $('#temp-reset').click(function() {
+  $('#temperature-reset').click(function() {
     thermostat.resetTemperature();
     updateTemperature();
   });
 
-  $('#psm-on').click(function() {
+  $('#powersaving-on').click(function() {
     thermostat.switchPowerSavingModeOn();
-    $('#power-saving').text('on')
+    $('#power-saving-status').text('on')
     updateTemperature();
   });
 
-  $('#psm-off').click(function() {
+  $('#powersaving-off').click(function() {
     thermostat.switchPowerSavingModeOff();
-    $('#power-saving').text('off')
+    $('#power-saving-status').text('off')
     updateTemperature();
   });
 
