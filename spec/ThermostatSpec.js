@@ -71,4 +71,25 @@ it('can be reset to the default temperature', function(){
   expect(thermostat.getCurrentTemperature()).toEqual(20);
 });
 
+it('displays low energy usage when temperature is below 18degC', function(){
+  for (var i = 0; i < 3; i++) {
+    thermostat.down();
+  }
+  expect(thermostat.energyUsage()).toEqual('low-usage');
+});
+
+it('displays medium energy usage when temperature is between 18 - 25 degC', function() {
+  for (var i = 0; i < 4; i++) {
+    thermostat.up();
+  }
+  expect(thermostat.energyUsage()).toEqual('medium-usage');
+});
+
+it('displays high energy usage when temperature is above 25degC', function() {
+  thermostat.powerSavingMode = false; //maximum temperature setting is 32. switch off because below 25, PSM is ON
+  for (var i = 0; i < 6; i++) {
+    thermostat.up();
+  }
+  expect(thermostat.energyUsage()).toEqual('high-usage');
+});
 });
